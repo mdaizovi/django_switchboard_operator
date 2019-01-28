@@ -1,0 +1,11 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+  <div class="submit-row">
+    <div class="help">Email will only try to send if msg_envelope_sender is in settings.SENDER_ADDRESSES. 
+      Please note that after a successful send, all Attachment objects and files are deleted
+    </div>
+  <input type="submit" value="Send Email" name="_send_email"{% if original.sent%}disabled="True"{%endif%}>
+</div>
+{{ block.super }}
+{% endblock %}

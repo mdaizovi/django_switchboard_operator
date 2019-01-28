@@ -1,0 +1,8 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+  <div class="submit-row">
+  <p class="deletelink-box"><a href="/admin/switchboard_operator/messageincoming/{{ original.pk }}/delete/" class="deletelink">Delete</a></p>
+  <input type="submit" value="Reply" name="_reply">
+</div>
+{% endblock %}
