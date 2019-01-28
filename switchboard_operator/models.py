@@ -244,6 +244,12 @@ class MessageOutgoing(MessageEvent):
         date = self.sent or self.msg_date
         return date            
                 
+    #---------------------------------------------------------------------------
+    @property
+    def can_send(self):
+        if self.pk and not self.sent:
+            return True                               
+
     #---------------------------------------------------------------------------                
     def clean(self):
         if str(self.msg_envelope_sender) not in self.SENDER_ADDRESSES:
