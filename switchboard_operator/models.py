@@ -195,7 +195,7 @@ def handle_inbound(sender, event, esp_name, **kwargs):
     if (str(event_message.from_email) in blacklisted_emails) or (message_domain in blacklisted_domains):
         print("%s is Blacklisted."%(str(event_message.from_email)))
         return False
-    elif not event_message.from_email or (str(event_message.from_email) == "":
+    elif not event_message.from_email or (str(event_message.from_email)) == "":
         print("No from email provided. Dismissing email to " + str(event_message.envelope_recipient))
         return False        
 
