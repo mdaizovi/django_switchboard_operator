@@ -177,8 +177,9 @@ class MessageEvent(models.Model):
             self.forwarded = timezone.now()
         self.save()
 
-        for a in self.attachments.all():
-            a.delete()       
+        # Do a cronjob, attachments are getting deleted too soon.
+        # for a in self.attachments.all():
+        #     a.delete()       
         
         return True
           
