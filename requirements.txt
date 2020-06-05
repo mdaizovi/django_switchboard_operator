@@ -1,6 +1,6 @@
 certifi==2018.11.29
 chardet==3.0.4
-Django==2.0
+Django==2.2.13
 django-anymail==5.0
 django-cleanup==3.0.1
 idna==2.8
